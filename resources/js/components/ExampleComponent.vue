@@ -17,7 +17,7 @@
                         <b-input
                             type="text"
                             v-model="newTask"
-                            @blur="addTask"
+                           
                             variant="priamy"
                             >Test</b-input
                         >
@@ -45,20 +45,20 @@ export default {
         // });
     },
     created() {
-        axios.get("/tasks").then(response => (this.tasks = response.data));
+        // axios.get("/tasks").then(response => (this.tasks = response.data));
 
-        Echo.channel("tasks").listen("TaskCreated", ({ task }) => {
-            this.tasks.push(task.body);
-        });
+        // Echo.channel("tasks").listen("TaskCreated", ({ task }) => {
+        //     this.tasks.push(task.body);
+        // });
     },
     methods: {
-        addTask() {
-            axios.post("/tasks", { body: this.newTask });
+        // addTask() {
+        //     axios.post("/tasks", { body: this.newTask });
 
-            this.tasks.push(this.newTask);
+        //     this.tasks.push(this.newTask);
 
-            this.newTask = "";
-        }
+        //     this.newTask = "";
+        // }
     }
 };
 </script>

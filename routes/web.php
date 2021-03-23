@@ -1,6 +1,9 @@
 <?php
 
 use App\Models\Task;
+use App\Models\Project;
+use App\Events\TaskCreated;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,7 +27,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 // TASKS
 Route::get('/tasks', function () {
@@ -39,21 +44,19 @@ Route::post('/tasks', function () {
 //     OrderStatusUpdated::dispatch(new Order($id));
 // });
 
-// // Projects Page
-// Route::get('/projects/{id}', function (Project $project) {
-//     $project->load('tasks');
-//     return Inertia::render('Project', compact('project'));
-// })->middleware(['auth', 'verified'])->name('project');
-// //return view('projects.show', compact('project'));
-// //});
+// Projects Page
+Route::get('/projects/{project}', function (Project $project) {
+    $project->load('tasks');
+    return view('projects.show', compact('project'));
+});
 
-// // API
-// Route::get('/api/projects/{project}', function (Project $project) {
-//     return $project->tasks->pluck('body');
-// });
+// API
+Route::get('/api/projects/{project}', function (Project $project) {
+    return $project->tasks->pluck('body');
+});
 
-// Route::post('/api/projects/{project}/tasks', function (Project $project) {
-//     $task = $project->tasks()->create(request(['body']));
-//     event(new TaskCreated($task));
-//     return $task;
-// });
+Route::post('/api/projects/{project}/tasks', function (Project $project) {
+    $task = $project->tasks()->create(request(['body']));
+    event(new TaskCreated($task));
+    return $task;
+});

@@ -15,9 +15,9 @@ Vue.use(IconsPlugin)
 
 //Main pages
 import ExampleComponent from './components/ExampleComponent.vue'
-
+import ProjectComponent from './components/Project.vue'
 
 const app = new Vue({
     el: '#app',
-    components: { ExampleComponent }
+    components: { ExampleComponent, ProjectComponent }
 });
