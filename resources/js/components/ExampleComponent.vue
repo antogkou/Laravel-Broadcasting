@@ -17,7 +17,7 @@
                         <b-input
                             type="text"
                             v-model="newTask"
-                           
+
                             variant="priamy"
                             >Test</b-input
                         >
@@ -30,35 +30,34 @@
 
 <script>
 export default {
-    data() {
-        return {
-            pusherResponse: null,
-            tasks: [],
-            newTask: ""
-        };
-    },
-    mounted() {
-        // Echo.channel("order-channel").listen("OrderStatusUpdated", e => {
-        //     console.log("Order has been updated behind the scenes");
-        //     console.log(e);
-        //     this.pusherResponse = e.order_id;
-        // });
-    },
-    created() {
-        // axios.get("/tasks").then(response => (this.tasks = response.data));
+  data() {
+    return {usherResponse: null,
+      tasks: [],
+      newTask: '',
+    };
+  },
+  mounted() {
+    // Echo.channel("order-channel").listen("OrderStatusUpdated", e => {
+    //     console.log("Order has been updated behind the scenes");
+    //     console.log(e);
+    //     this.pusherResponse = e.order_id;
+    // });
+  },
+  created() {
+    // axios.get("/tasks").then(response => (this.tasks = response.data));
 
-        // Echo.channel("tasks").listen("TaskCreated", ({ task }) => {
-        //     this.tasks.push(task.body);
-        // });
-    },
-    methods: {
-        // addTask() {
-        //     axios.post("/tasks", { body: this.newTask });
+    // Echo.channel("tasks").listen("TaskCreated", ({ task }) => {
+    //     this.tasks.push(task.body);
+    // });
+  },
+  methods: {
+    // addTask() {
+    //     axios.post("/tasks", { body: this.newTask });
 
-        //     this.tasks.push(this.newTask);
+    //     this.tasks.push(this.newTask);
 
-        //     this.newTask = "";
-        // }
-    }
+    //     this.newTask = "";
+    // }
+  },
 };
 </script>

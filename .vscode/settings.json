@@ -1,0 +1,52 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontSize": 15,
+    "explorer.openEditors.visible": 0,
+    "terminal.integrated.fontFamily": "Monaco, Menio, 'Courier New', monospace",
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "terminal.integrated.shell.windows": "C:\\Git\\bin\\bash.exe",
+    "terminal.external.windowsExec": "C:\\Git\\bin\\bash.exe",
+    "terminal.explorerKind": "external",
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "files.autoSave": "afterDelay",
+    "blade.format.enable": true,
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.associations": {
+        "*.php": "php"
+    },
+    "phpcs.executablePath": "/c/users/gkouta01/.composer/vendor/bin/phpcs",
+    "[php]": {
+
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "php-cs-fixer.lastDownload": 1616483222024,
+    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
+    "terminal.integrated.shell.linux": "",
+    "files.eol": "\n",
+    "intelephense.diagnostics.undefinedTypes": false,
+    "json.schemas": [
+
+    ],
+    "eslint.validate": [
+        "javascript",
+        "vue",
+    ],
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+   
+    "window.zoomLevel": -1,
+    "editor.formatOnSave": true,
+}
