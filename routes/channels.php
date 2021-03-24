@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Broadcast;
 // });
 
 Broadcast::channel('tasks.{project}', function ($user, Project $project) {
+    // *Manual Access Management*
     // $canAccess = [];
     // if ($user->email === "antonis.gkoutzamanis@pfizer.com") {
     //     $canAccess = [1, 3];
@@ -29,5 +30,12 @@ Broadcast::channel('tasks.{project}', function ($user, Project $project) {
     // }
 
     // return in_array($projectId, $canAccess);
-        return $project->participants->contains($user);
+
+    // *Private Channel*
+    //return $project->participants->contains($user);
+
+    // *Presence Channel*
+    if ($project->participants->contains($user)) {
+        return ['name' => $user->name];
+    }
 });

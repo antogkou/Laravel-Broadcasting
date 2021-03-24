@@ -48,7 +48,7 @@ Route::post('/tasks', function () {
 Route::get('/projects/{project}', function (Project $project) {
     $project->load('tasks');
     return view('projects.show', compact('project'));
-});
+})->name('projects');
 
 // API
 Route::get('/api/projects/{project}', function (Project $project) {
