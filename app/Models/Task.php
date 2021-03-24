@@ -14,6 +14,11 @@ class Task extends Model
         'body'
     ];
 
+    protected $dispatchesEvents = [
+        'saved' => UserSaved::class,
+        'deleted' => UserDeleted::class,
+    ];
+
     public function project() {
         return $this->belongsTo(Project::class);
     }
